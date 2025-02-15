@@ -29,12 +29,13 @@ const resize = async () => {
   resolution.set(window.innerWidth, window.innerHeight);
   renderer.setSize(resolution.x, resolution.y);
   camera.resize(resolution);
+  background.resize(resolution, camera);
 };
 
 const update = () => {
   const delta = clock.getDelta();
 
-  background.update(camera, delta);
+  background.update(delta);
   renderer.render(scene, camera);
   requestAnimationFrame(update);
 };
