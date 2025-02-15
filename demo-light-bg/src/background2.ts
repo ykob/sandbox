@@ -8,8 +8,8 @@ import {
   Vector2
 } from 'three';
 import { getCoordAsPixel } from '~/utils';
-import fragmentShader from './glsl/background.fs';
 import vertexShader from './glsl/background.vs';
+import fragmentShader from './glsl/background2.fs';
 
 export class Background extends Mesh<PlaneGeometry, RawShaderMaterial> {
   time: number;

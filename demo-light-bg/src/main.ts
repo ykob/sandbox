@@ -6,7 +6,7 @@ import {
   Vector2,
   WebGLRenderer,
 } from 'three';
-import { Background } from './background';
+import { Background } from './background2';
 import { Camera } from './camera';
 
 const app = document.getElementById('app');
