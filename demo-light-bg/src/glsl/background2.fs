@@ -24,8 +24,8 @@ void main() {
   vec3 noise2 = texture(uNoiseTexture, noiseUv * 0.5 + vec2(uTime * -0.024, 0.5)).rgb;
   vec3 noiseAmount = ((noise1 + noise2) - 1.0);
   vec3 baseColor = texture(uImageTexture, uv).rgb;
-  vec3 lightColor1 = smoothstep(0.86, 1.0, texture(uImageTexture, uv + noiseAmount.rg * 0.1).rgb);
-  vec3 lightColor2 = smoothstep(0.86, 1.0, texture(uImageTexture, uv - noiseAmount.rg * 0.1).rgb);
+  vec3 lightColor1 = smoothstep(0.86, 1.0, texture(uImageTexture, uv + noiseAmount.rg * 0.11).rgb);
+  vec3 lightColor2 = smoothstep(0.86, 1.0, texture(uImageTexture, uv - noiseAmount.rg * 0.11).rgb);
 
   fragColor = vec4(baseColor + lightColor1 * 0.04 + lightColor2 * 0.04, 1.0);
 }
