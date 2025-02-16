@@ -6,7 +6,7 @@ import {
   Vector2,
   WebGLRenderer,
 } from 'three';
-import { Background } from './background2';
+import { Background } from './background';
 import { Camera } from './camera';
 
 const app = document.getElementById('app');
@@ -50,10 +50,10 @@ const start = async () => {
 
   await Promise.all([
     textureLoader.loadAsync(
-      './bg.jpg',
+      './img/bg.jpg',
     ),
     textureLoader.loadAsync(
-      './noise.jpg',
+      './img/noise.jpg',
     )
   ]).then(([imageTexture, noiseTexture]) => {
     noiseTexture.wrapS = RepeatWrapping;
