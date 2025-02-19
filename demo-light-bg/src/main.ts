@@ -9,6 +9,8 @@ import {
 import { Background } from './background';
 import { Camera } from './camera';
 
+declare const imgPath: string;
+
 const app = document.getElementById('app');
 const canvas = document.createElement('canvas');
 const renderer = new WebGLRenderer({
@@ -50,10 +52,10 @@ const start = async () => {
 
   await Promise.all([
     textureLoader.loadAsync(
-      './img/bg.jpg',
+      `${imgPath}/img/bg.jpg`,
     ),
     textureLoader.loadAsync(
-      './img/noise.jpg',
+      `${imgPath}/img/noise.jpg`,
     )
   ]).then(([imageTexture, noiseTexture]) => {
     noiseTexture.wrapS = RepeatWrapping;
