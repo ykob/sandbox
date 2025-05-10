@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,15 @@
     <title>Vite + TS</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <h1>View Transition</h1>
+      <div>
+        <button class="transition-trigger" value="1">Content 1</button>
+        <button class="transition-trigger" value="2">Content 2</button>
+        <button class="transition-trigger" value="3">Content 3</button>
+      </div>
+      <div id="content"></div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
