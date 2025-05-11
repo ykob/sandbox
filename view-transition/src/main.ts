@@ -1,3 +1,4 @@
+import { contents } from "./contents";
 import "./style.css";
 
 const content = document.querySelector<HTMLDivElement>("#content")!;
@@ -14,7 +15,7 @@ const handleNavigation = async (event: Event) => {
   // Start the transition
   document.startViewTransition(() => {
     // Update the content
-    content.innerHTML = `<h2>${target.value}</h2>`;
+    content.innerHTML = contents[Number(index)];
   });
 };
 
