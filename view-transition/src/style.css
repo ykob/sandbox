@@ -33,3 +33,9 @@
   animation-delay: 0.2s;
   animation-timing-function: ease-out;
 }
+.page {
+  max-width: 1024px;
+  box-sizing: border-box;
+  margin-inline: auto;
+  padding-inline: 32px;
+}
