@@ -1,0 +1,35 @@
+.content {
+  view-transition-name: content;
+}
+@keyframes hideContent {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(48px);
+  }
+}
+@keyframes showContent {
+  0% {
+    opacity: 0;
+    transform: translateX(-48px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+::view-transition-old(content) {
+  animation-name: hideContent;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-timing-function: ease-out;
+}
+::view-transition-new(content) {
+  animation-name: showContent;
+  animation-duration: 0.6s;
+  animation-delay: 0.2s;
+  animation-timing-function: ease-out;
+}
