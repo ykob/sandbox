@@ -4,10 +4,10 @@ const {
   CONFLUENCE_BASE_URL,
   CONFLUENCE_EMAIL,
   CONFLUENCE_API_TOKEN,
-  CONFLUENCE_SPACE_KEY
+  CONFLUENCE_SPACE_ID
 } = process.env;
 
-if (!CONFLUENCE_BASE_URL || !CONFLUENCE_EMAIL || !CONFLUENCE_API_TOKEN || !CONFLUENCE_SPACE_KEY) {
+if (!CONFLUENCE_BASE_URL || !CONFLUENCE_EMAIL || !CONFLUENCE_API_TOKEN || !CONFLUENCE_SPACE_ID) {
   throw new Error('環境変数が不足しています。 .env ファイルを確認してください。');
 }
 
@@ -24,10 +24,7 @@ async function createBlogPost(): Promise<void> {
   const blogPostData = {
     type: 'blogpost',
     title: 'TypeScriptとdotenvで投稿したブログ',
-    space: {
-      key: CONFLUENCE_SPACE_KEY
-    },
-    spaceId: 46366823,
+    spaceId: CONFLUENCE_SPACE_ID,
     body: {
       storage: {
         value: '<p>これはTypeScriptで投稿したConfluenceブログです。</p>',
