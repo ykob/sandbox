@@ -1,0 +1,19 @@
+import 'dotenv/config';
+
+const {
+  CONFLUENCE_BASE_URL,
+  CONFLUENCE_EMAIL,
+  CONFLUENCE_API_TOKEN,
+  CONFLUENCE_SPACE_ID
+} = process.env;
+
+if (!CONFLUENCE_BASE_URL || !CONFLUENCE_EMAIL || !CONFLUENCE_API_TOKEN || !CONFLUENCE_SPACE_ID) {
+  throw new Error('環境変数が不足しています。 .env ファイルを確認してください。');
+}
+
+export {
+  CONFLUENCE_BASE_URL,
+  CONFLUENCE_EMAIL,
+  CONFLUENCE_API_TOKEN,
+  CONFLUENCE_SPACE_ID
+}

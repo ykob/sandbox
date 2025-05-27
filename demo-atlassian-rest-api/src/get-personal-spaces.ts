@@ -1,14 +1,9 @@
 import 'dotenv/config';
-
-const {
+import {
   CONFLUENCE_BASE_URL,
   CONFLUENCE_EMAIL,
   CONFLUENCE_API_TOKEN,
-} = process.env;
-
-if (!CONFLUENCE_BASE_URL || !CONFLUENCE_EMAIL || !CONFLUENCE_API_TOKEN) {
-  throw new Error('環境変数が不足しています。 .env ファイルを確認してください。');
-}
+} from './env.js';
 
 const API_ENDPOINT = `${CONFLUENCE_BASE_URL}/wiki/api/v2/spaces`;
 const authString = Buffer.from(`${CONFLUENCE_EMAIL}:${CONFLUENCE_API_TOKEN}`).toString('base64');
